@@ -12,11 +12,7 @@ app.get("/", (req, res) => {
 app.post("/bfhl", (req, res) => {
   const data = req.body.data;
 
-  if (
-    data &&
-    Array.isArray(data) &&
-    data.every((item) => item.match(/^[A-Za-z0-9]+$/))
-  ) {
+  if (data && Array.isArray(data)) {
     try {
       const alphabets = data.filter((item) => item.match(/^[A-Za-z]+$/)) || [];
       const numbers = data.filter((item) => item.match(/[0-9]/i)) || [];
