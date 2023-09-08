@@ -25,6 +25,10 @@ app.post('/bfhl', (req, res) => {
     res.status(200).json(resp)
 })
 
+app.get('/', (req, res) => {
+    res.send('api is running')
+})
+
 app.get('/bfhl', (req, res) => {
   res.status(200).json({operation_code: 1})
 })
