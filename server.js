@@ -8,15 +8,15 @@ app.use(express.json());
 app.post('/bfhl', (req, res) => {
     const data = req.body.data
 
-    const alphabets = data.filter((item) => item.match(/^[A-Za-z]+$/))
-    const numbers = data.filter((item) => item.match(/[0-9]/i))
+    const alphabets = data.filter((item) => item.match(/^[A-Za-z]+$/)) || []
+    const numbers = data.filter((item) => item.match(/[0-9]/i)) || []
 
-    const highest = alphabets.sort((a, b) => b.charCodeAt(0) - a.charCodeAt(0))[0];
+    const highest = alphabets.sort((a, b) => b.charCodeAt(0) - a.charCodeAt(0))[0] || [];
     const resp = {
         is_success: true,
-        user_id: "john_doe_17091999",
-        email: "john@xyz.com",
-        roll_number: "ABCD123",
+        user_id: "hm1624",
+        email: "hm1624@srmist.edu.in",
+        roll_number: "RA2011043020048",
         numbers: numbers,
         alphabets: alphabets,
         highest_alphabet: [highest]
